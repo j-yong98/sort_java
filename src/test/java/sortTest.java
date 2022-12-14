@@ -24,4 +24,14 @@ public class sortTest {
 
         assertThat(selection).isEqualTo(new int[]{1,4,5,6,10,20});
     }
+
+    @Test
+    @DisplayName("삽입 정렬 테스트")
+    void insertionSort(){
+        InsertionSort insertionSort = new InsertionSort();
+
+        int[] insertion = insertionSort.insertion(6, new int[]{10, 5, 6, 3, 8, 2});
+
+        assertThat(insertion).isEqualTo(new int[]{2,3,5,6,8,10});
+    }
 }
