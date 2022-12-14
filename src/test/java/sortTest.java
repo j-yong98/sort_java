@@ -1,9 +1,7 @@
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class sortTest {
 
@@ -12,8 +10,18 @@ public class sortTest {
     void bubbleSortTest() {
         BubbleSort bubbleSort = new BubbleSort();
 
-        List<Integer> bubble = bubbleSort.bubble(6, new ArrayList<>(List.of(1, 3, 4, 6, 2, 10)));
+        int[] bubble = bubbleSort.bubble(6, new int[]{1, 3, 4, 6, 2, 10});
 
-        Assertions.assertThat(bubble).isEqualTo(List.of(1, 2, 3, 4, 6, 10));
+        assertThat(bubble).isEqualTo(new int[]{1, 2, 3, 4, 6, 10});
+    }
+
+    @Test
+    @DisplayName("선택 정렬 테스트")
+    void selectionSort(){
+        SelectionSort selectionSort = new SelectionSort();
+
+        int[] selection = selectionSort.selection(6, new int[]{5, 1, 4, 10, 6, 20});
+
+        assertThat(selection).isEqualTo(new int[]{1,4,5,6,10,20});
     }
 }
