@@ -1,3 +1,4 @@
+import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -46,5 +47,15 @@ public class sortTest {
 
         assertThat(radix1).isEqualTo(new int[]{1,2,4,5,6,8});
         assertThat(radix2).isEqualTo(new int[]{15,28,33,43,61,97});
+    }
+
+    @Test
+    @DisplayName("병합 정렬 테스트")
+    void mergeSort(){
+        MergeSort mergeSort = new MergeSort();
+
+        int[] merge = mergeSort.mergeSort(new int[]{1, 6, 3, 8, 4, 2}, 0, 5);
+
+        assertThat(merge).isEqualTo(new int[]{1,2,3,4,6,8});
     }
 }
