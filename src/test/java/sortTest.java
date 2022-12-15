@@ -58,4 +58,14 @@ public class sortTest {
 
         assertThat(merge).isEqualTo(new int[]{1,2,3,4,6,8});
     }
+
+    @Test
+    @DisplayName("퀵 정렬 테스트")
+    void quickSort(){
+        QuickSort quickSort = new QuickSort();
+
+        int[] quick = quickSort.quickSort(new int[]{6, 4, 1, 3, 8, 7}, 0, 5);
+
+        assertThat(quick).isEqualTo(new int[]{1,3,4,6,7,8});
+    }
 }
