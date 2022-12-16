@@ -68,4 +68,14 @@ public class sortTest {
 
         assertThat(quick).isEqualTo(new int[]{1,3,4,6,7,8});
     }
+
+    @Test
+    @DisplayName("힙 정렬 테스트")
+    void heapSort(){
+        HeapSort heapSort = new HeapSort();
+
+        int[] heap = heapSort.heapSort(new int[]{0, 4, 5, 1, 2, 7, 8}, 6);
+
+        assertThat(heap).isEqualTo(new int[]{0,1,2,4,5,7,8});
+    }
 }
